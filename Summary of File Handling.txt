@@ -1,0 +1,12 @@
+File handling in Java
+1. Stream - 
+2. Byte and Character stream
+3. Character Stream - 
+	File - to specify the file
+	FileReader - for reading - constructor
+	FileWriter - for writting - constructor
+4. Byte Stream
+	FileInputStream - Reading 
+	FileOutputStream - writting
+5. Function for file handling
+6. Serialization and deserialization.

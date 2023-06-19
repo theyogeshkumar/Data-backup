@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Hiding and Showing</title>
+    <style>
+        .item-box{
+            width: 150px;
+            margin: 20px;
+            min-width: 200px;
+            background-color: cornsilk;
+            padding: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .more-info{
+            margin-top: 20px;
+            display: none;
+        }
+        .item-price{
+            font-weight: bolder;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="item-box">
+        <img src="/Screenshot (5).png" alt="Image" style="height: 100px;width: 100px;">
+        <div class="item-title">Mumbai Juhu</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Deserunt voluptas facilis commodi pariatur aliquam earum,
+            fuga tenetur! Maiores consequatur labore voluptas excepturi harum,
+            exercitationem doloremque voluptate earum architecto dolor numquam.</p>
+
+        <div class="item-price">$2129</div>
+        <button>Add to Cart</button>
+        <div>
+            <a href="#" class="info-link">Get More INformation</a>
+        </div>
+        <div class="more-info">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt voluptas facilis commodi pariatur aliquam earum,
+                fuga tenetur! Maiores consequatur labore voluptas excepturi harum,
+                exercitationem doloremque voluptate earum architecto dolor numquam.</p>
+      
+        </div>
+    </div>
+    
+
+    <script src="/js/js.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.item-box').on('click', 'a.info-link',function(){
+                // $(this).closest('.item-box').find('.more-info').fadeIn('slower');
+                $(this).closest('.item-box').find('.more-info').fadeOut('slower');
+                // $(this).closest('.item-box').find('.more-info').slideIn('2000');
+                // $(this).closest('.item-box').find('.more-info').slideOut('2000');
+                // $(this).closest('.item-box').find('.more-info').slideToggle('slower');
+                // $(this).closest('.item-box').find('.more-info').fadeToggle('slower')
+            });
+        });
+    </script>
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>
